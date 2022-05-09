@@ -1,6 +1,6 @@
 # NHIValidation
 
-A class to validate New Zealand National Health Index numbers. Checks both old and new formats.
+A c# class to validate New Zealand National Health Index numbers. Checks both old and new formats.
 
 This is based off the Ministry of Health document nhi_validation_routine_July_2020.pdf from https://www.health.govt.nz/our-work/health-identity/national-health-index/information-health-it-vendors-and-developers/nhi-interfaces.
 
