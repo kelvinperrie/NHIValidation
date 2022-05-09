@@ -45,9 +45,7 @@ namespace NHIValidation.Tests
         {
             // taken from nhi_test_data_v1_mar2021.xlsx
             var newFormatValidNhis = new List<string> {
-                // "ZVU27KZ" this is invalid because checksum = 0, but it is in the nhi extract from ministy test data
-                // ,"ZRJ15RZ" also invalid due to checksum = 0
-                "ZFW82UY","ZGE49PF","ZGT56KB","ZHS91BR","ZHW58CN","ZHY48KS","ZLP86TT","ZLV86AX","ZMB24NR","ZMQ76GJ","ZMZ50WK","ZNE51MT","ZNK30DV","ZNY96HA","ZPR06CD","ZPR16BB","ZQS06AW","ZQU93YM","ZQX24SK","ZRG64XE","ZRK71RG","ZRN78JJ","ZRS54VL","ZTK62JK","ZTR5696","ZTZ82UH","ZUF11LU","ZVD34XH","ZWT49FS","ZXB26JF","ZXD67TG","ZXH68CP","ZYB54DD","ZYV14AH","ZZB17BJ","ZZD25FS","ZZG78TW","ZZK09PQ",
+                "ZRJ15RZ","ZVU27KZ","ZFW82UY","ZGE49PF","ZGT56KB","ZHS91BR","ZHW58CN","ZHY48KS","ZLP86TT","ZLV86AX","ZMB24NR","ZMQ76GJ","ZMZ50WK","ZNE51MT","ZNK30DV","ZNY96HA","ZPR06CD","ZPR16BB","ZQS06AW","ZQU93YM","ZQX24SK","ZRG64XE","ZRK71RG","ZRN78JJ","ZRS54VL","ZTK62JK","ZTR5696","ZTZ82UH","ZUF11LU","ZVD34XH","ZWT49FS","ZXB26JF","ZXD67TG","ZXH68CP","ZYB54DD","ZYV14AH","ZZB17BJ","ZZD25FS","ZZG78TW","ZZK09PQ",
             };
 
             foreach (var nhi in newFormatValidNhis)

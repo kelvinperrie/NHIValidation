@@ -55,7 +55,8 @@
             int checkSum = result % (newFormat ? 24 : 11);
 
             // 12. If checksum is ‘0’ then the NHI number is incorrect.
-            if (checkSum == 0) return false;
+            //[the document doesn't say, but this only applies to the old format]
+            if (!newFormat && checkSum == 0) return false;
 
             // 13. Subtract checksum from 11 to create check digit.
             // [If the position 6 is an alpha character]
