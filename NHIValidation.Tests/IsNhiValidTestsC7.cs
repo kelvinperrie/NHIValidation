@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NHIValidation.Tests
 {
-    public class IsNhiValidTests
+    public class IsNhiValidTestsC7
     {
 
         [SetUp]
@@ -20,7 +20,7 @@ namespace NHIValidation.Tests
 
             foreach (var nhi in oldFormatValidNhis)
             {
-                var result = NHIValidation.IsNhiValid(nhi);
+                var result = NHIValidationC7.IsNhiValid(nhi);
 
                 Assert.IsTrue(result);
             }
@@ -34,7 +34,7 @@ namespace NHIValidation.Tests
 
             foreach (var nhi in oldFormatInvalidNhis)
             {
-                var result = NHIValidation.IsNhiValid(nhi);
+                var result = NHIValidationC7.IsNhiValid(nhi);
 
                 Assert.IsFalse(result);
             }
@@ -50,7 +50,7 @@ namespace NHIValidation.Tests
 
             foreach (var nhi in newFormatValidNhis)
             {
-                var result = NHIValidation.IsNhiValid(nhi);
+                var result = NHIValidationC7.IsNhiValid(nhi);
 
                 Assert.IsTrue(result);
             }
@@ -64,7 +64,7 @@ namespace NHIValidation.Tests
 
             foreach (var nhi in newFormatInvalidNhis)
             {
-                var result = NHIValidation.IsNhiValid(nhi);
+                var result = NHIValidationC7.IsNhiValid(nhi);
 
                 Assert.IsFalse(result);
             }

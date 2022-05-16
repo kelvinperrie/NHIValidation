@@ -1,6 +1,9 @@
 ﻿namespace NHIValidation
 {
-    public static class NHIValidation
+    /// <summary>
+    /// this version doesn't use c#8 features
+    /// </summary>
+    public static class NHIValidationC7
     {
         /// <summary>
         /// Checks to see if a string is a valid New Zealand National Health Index number
@@ -16,16 +19,14 @@
 
             // 1. Position 1,2 and 3 must be within the Alphabet Conversion Table(see above), that is, they are not ‘I’ or ‘O’.
             // suck it regex
-            if (!nhi[..3].ToList().All(i => validNhiChars.Contains(i))) return false;
+            if (!nhi.Take(3).All(i => validNhiChars.Contains(i))) return false;
 
             // 2. Position 4 and 5 must be numeric
-            if (!nhi[3..5].ToList().All(n => int.TryParse(n.ToString(), out _))) return false;
+            if (!nhi.Skip(3).Take(2).All(n => int.TryParse(n.ToString(), out _))) return false;
 
             // 3. Position 6 and 7 are either both numeric or both alphabetic
-            var rule3 = nhi[5..7];
-            var isInt = int.TryParse(rule3, out _);
-            var IsChars = rule3.All(x => x.IsEnglishLetter());
-            if (!isInt && !IsChars) return false;
+            var rule3 = nhi.Skip(5).Take(2);
+            if (!rule3.All(x => int.TryParse(x.ToString(), out _)) && !rule3.All(x => x.IsEnglishLetter())) return false;
 
             // 4. Assign first letter its corresponding value from the Alphabet Conversion Table and multiply value by 7.
             // 5. Assign second letter its corresponding value from the Alphabet Conversion Table and multiply value by 6.
@@ -37,7 +38,7 @@
             // 10. Total the results of steps 4 to 9.
             var result = 0;
             int counter = 7;
-            foreach (var character in nhi[..6])
+            foreach (var character in nhi.Take(6))
             {
                 if (character.IsEnglishLetter())
                 {
